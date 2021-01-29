@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="select"></ion-back-button>
+    </ion-buttons>
+    <ion-title>ADVANC</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="assets/img/advanc.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+        Advanced Info Service Public Company Limited
+      </ion-card-title>
+      <p>
+        is Thailand's largest GSM mobile phone operator with 39.87 million customers as of Q3 2016.
+         Founded in April 1986, AIS started off as a computer rental business.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-input placeholder="DD/M/YYYY" [(ngModel)]="date"></ion-input>
+  </ion-item>
+  <ion-button (click)="showStock(date)" expand="block">Show Stock Record</ion-button>
+  <div *ngIf='stock$ | async as s'>
+    <ion-card>
+      <h1>Date:{{s.data.Date}}</h1>
+      <br/>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>AveragePrice:</b>{{s.data.Average}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>AOMVolume:</b>{{s.data.AOMVolume}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>AOMValue:</b>{{s.data.AomValue}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>MarketCap:</b>{{s.data.MarketCap}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>P/E:</b>{{s.data.PE}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>P/BV:</b>{{s.data.PBV}}</h3>
+    </ion-card>
+
+  </div>
+
+
+</ion-content>

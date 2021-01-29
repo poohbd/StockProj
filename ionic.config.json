@@ -1,5 +1,7 @@
 {
   "name": "StockProj",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

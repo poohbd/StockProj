@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="select"></ion-back-button>
+    </ion-buttons>
+    <ion-title>PTT</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="assets/img/ptt.png"/>
+    <ion-card-content>
+      <ion-card-title>
+        PTT Public Company Limited
+      </ion-card-title>
+      <p>
+        is a Thai state-owned SET-listed oil and gas company. Formerly known as the Petroleum Authority of Thailand,
+         it owns extensive submarine gas pipelines in the Gulf of Thailand, a network of LPG terminals throughout the kingdom, and is involved in electricity generation,
+          petrochemical products, oil and gas exploration and production, and gasoline retailing businesses.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-input placeholder="DD/M/YYYY" [(ngModel)]="date"></ion-input>
+  </ion-item>
+  <ion-button (click)="showStock(date)" expand="block">Show Stock Record</ion-button>
+  <div *ngIf='stock$ | async as s'>
+    <ion-card>
+      <h1>Date:{{s.data.Date}}</h1>
+      <br/>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>AveragePrice:</b>{{s.data.Average}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>AOMVolume:</b>{{s.data.AOMVolume}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>AOMValue:</b>{{s.data.AomValue}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>MarketCap:</b>{{s.data.MarketCap}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>P/E:</b>{{s.data.PE}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>P/BV:</b>{{s.data.PBV}}</h3>
+    </ion-card>
+
+  </div>
+
+
+
+</ion-content>

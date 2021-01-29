@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="select"></ion-back-button>
+    </ion-buttons>
+    <ion-title>PTTEP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="assets/img/pttep.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+        PTT Exploration and Production
+      </ion-card-title>
+      <p>
+        is a national petroleum exploration and production company based in Thailand. It is a subsidiary of the state-owned PTT Public Company Limited. The company was founded on 20 June 1985.
+         PTTEP's core business is exploration and production of petroleum in Thailand and foreign countries. As of June 30, 2018, PTTEP Group had 40 petroleum exploration and production projects in 11 countries;
+          16 projects in Thailand, 15 projects in Southeast Asia, 5 projects in Americas, 3 projects in Africa and 1 project in Australia.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-input placeholder="DD/M/YYYY" [(ngModel)]="date"></ion-input>
+  </ion-item>
+  <ion-button (click)="showStock(date)" expand="block">Show Stock Record</ion-button>
+  <div *ngIf='stock$ | async as s'>
+    <ion-card>
+      <h1>Date:{{s.data.Date}}</h1>
+      <br/>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>AveragePrice:</b>{{s.data.Average}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>AOMVolume:</b>{{s.data.AOMVolume}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>AOMValue:</b>{{s.data.AomValue}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>MarketCap:</b>{{s.data.MarketCap}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>P/E:</b>{{s.data.PE}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>P/BV:</b>{{s.data.PBV}}</h3>
+    </ion-card>
+
+  </div>
+
+
+
+</ion-content>

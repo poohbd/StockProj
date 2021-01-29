@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="select"></ion-back-button>
+    </ion-buttons>
+    <ion-title>SCB</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="assets/img/scb.jpg"/>
+    <ion-card-content>
+      <ion-card-title>
+        Siam Commercial Bank
+      </ion-card-title>
+      <p>
+        is a Thai bank that was founded on 30 January 1907. King Vajiralongkorn is the largest single shareholder, owning 23.35 percent of SCB shares.
+        SCB was founded as the "Book Club" on 4 October 1904 by Prince Jayanta Mongkol, a brother of King Chulalongkorn (Rama V), who was convinced that the time was ripe for Siam to have its own banking system to help foster the country's economic development,
+         rather than rely on foreign banks operating branches in the country. The name "Book Club" was chosen in an effort to keep the project sub rosa as it was something of an experiment. After the success of the "Book Club", King Chulalongkorn granted royal approval for it to officially operate as a commercial bank under the name "The Siam Commercial Bank" on 30 January 1907.
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-input placeholder="DD/M/YYYY" [(ngModel)]="date"></ion-input>
+  </ion-item>
+  <ion-button (click)="showStock(date)" expand="block">Show Stock Record</ion-button>
+  <div *ngIf='stock$ | async as s'>
+    <ion-card>
+      <h1>Date:{{s.data.Date}}</h1>
+      <br/>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>AveragePrice:</b>{{s.data.Average}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>AOMVolume:</b>{{s.data.AOMVolume}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>AOMValue:</b>{{s.data.AomValue}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>MarketCap:</b>{{s.data.MarketCap}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>P/E:</b>{{s.data.PE}}</h3>
+      <h3>&nbsp;&nbsp;&nbsp;&nbsp;<b>P/BV:</b>{{s.data.PBV}}</h3>
+    </ion-card>
+
+  </div>
+
+
+
+</ion-content>

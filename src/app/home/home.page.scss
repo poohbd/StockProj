@@ -4,7 +4,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 100%;
   transform: translateY(-50%);
 }
 
@@ -24,4 +24,34 @@
 
 #container a {
   text-decoration: none;
+}
+
+.home-content{
+  background-color: #3880ff;
+  height: 100%;
+}
+
+.logo {
+  color: white;
+  font-size: 64px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.description {
+  color: white;
+  font-size: 22px;
+  text-align: center;
+}
+
+.log-in-button {
+  margin-top: 40px;
+  font-weight: bold;
+  --background: white;
+  --color: #3880ff;
+}
+.nav-button {
+  --background: #48C9B0  ;
+  --color: white;
 }
